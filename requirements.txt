@@ -1,0 +1,4 @@
+farm-haystack
+farm-haystack[crawler]
+farm-haystack[inference]
+python-dotenv-1.0.0
