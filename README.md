@@ -24,14 +24,12 @@ An Elasticsearch Documentstore is required to run the haystack demo.
 Deployment via docker is the easiest way.
 
 ```sh
-docker run --name es01 --net elastic -p 9200:9200 -it -m 1GB docker.elastic.co/elasticsearch/elasticsearch:8.11.2
+docker network create elastic
+docker run --name es01 --net elastic -p 9200:9200 -it -e "discovery.type=single-node" -e "xpack.security.enabled=false" -m 4GB docker.elastic.co/elasticsearch/elasticsearch:8.12.1
 ```
 
 ### LLM API
 
 LLM API credentials are required, to run later stages of the notebook.
-An `.env` file provides a credentials template. 
+An `.env` file provides a credentials template.
 (We used gpt3.5 from azure. If you plan to use another model read the [haystack-docs](https://docs.haystack.deepset.ai/docs/prompt_node), since the initialization format changes.)
-
-
-
