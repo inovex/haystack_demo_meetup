@@ -1,4 +1,7 @@
 farm-haystack
 farm-haystack[crawler]
 farm-haystack[inference]
+farm-haystack[elasticsearch8]
+farm-haystack[preprocessing]
 python-dotenv==1.0.1
+jupyter
